@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AuthTestProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c088b138f215ac49ab8f6508a4c169dcdfb9026a")]
 [assembly: System.Reflection.AssemblyProductAttribute("AuthTestProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AuthTestProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
