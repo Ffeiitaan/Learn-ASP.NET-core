@@ -1,5 +1,7 @@
 
 
+using AuthTestProject.Services;
+
 namespace AuthTestProject.Entities
 {
     public class User
@@ -7,8 +9,9 @@ namespace AuthTestProject.Entities
         public Guid Id { get; set; }
         public string Username { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
-        public string Role { get; set; } = string.Empty;
+        public string Role { get; set; } = "User";
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpiryTime { get; set; }
+        public ICollection<Permission> Permission { get; set; } = new List<Permission>();
     }
 }

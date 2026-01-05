@@ -16,7 +16,9 @@ namespace AuthTestProject.Services
     {
         public async Task<TokenResponseDto?> LoginAsync(UserDto request)
         {
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
+            var user = await context.Users
+                .Include(u => u.Permission)
+                .FirstOrDefaultAsync(u => u.Username == request.Username);
 
             if (user is null || new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password)
                 == PasswordVerificationResult.Failed)
@@ -98,12 +100,20 @@ namespace AuthTestProject.Services
 
         private string CreateToken(User user)
         {
+            var permissions = user.Permission.Select(p => p.Name);
+
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Role, user.Role)
             };
+
+            foreach (var permission in permissions)
+            {
+                Console.WriteLine("Permission" + permission);
+                claims.Add(new Claim("permission", permission));
+            }
 
             var key = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(

@@ -2,8 +2,10 @@ using AuthTestProject.Data;
 using Scalar.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using AuthTestProject.Services;
+using AuthTestProject.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,10 +31,29 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Token"]!)),
             ValidateIssuerSigningKey = true
 
-        };
+        };     
+    }
+);
+
+builder.Services.AddScoped<IAuthorizationHandler, PermissionsRequirementsHandler>();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy(Permissions.Read, policy =>
+    {
+        policy.Requirements.Add(
+            new PermissionsRequirements(Permissions.Read));
     });
+    options.AddPolicy(Permissions.Delete, policy =>
+    {
+        policy.Requirements.Add(
+            new PermissionsRequirements(Permissions.Delete));
+    });
+});
 
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+builder.Services.AddScoped<IPermissionService, PermissionService>();
 
 var app = builder.Build();
 
@@ -44,6 +65,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
