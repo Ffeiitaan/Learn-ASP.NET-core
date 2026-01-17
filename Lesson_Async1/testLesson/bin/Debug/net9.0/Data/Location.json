@@ -1,0 +1,16 @@
+{
+  "Locations": [
+    {
+      "UserId": 1,
+      "LocationName": "New York"
+    },
+    {
+      "UserId": 2,
+      "LocationName": "Los Angeles"
+    },
+    {
+      "UserId": 3,
+      "LocationName": "Chicago"
+    }
+  ]
+}

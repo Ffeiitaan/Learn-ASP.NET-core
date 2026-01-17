@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "DIuKIm/X6gI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ruslan\\Documents\\ASP.NET Core\\Lesson_Async1\\testLesson\\testLesson.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ruslan\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.8\\microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
+    "C:\\Users\\ruslan\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\ruslan\\.nuget\\packages\\scalar.aspnetcore\\2.12.8\\scalar.aspnetcore.2.12.8.nupkg.sha512"
+  ],
+  "logs": []
+}
