@@ -5,5 +5,5 @@ public enum TodoStatus
 {
     InProcess,
     Done,
-    Canceled,
+    Canceled
 }
