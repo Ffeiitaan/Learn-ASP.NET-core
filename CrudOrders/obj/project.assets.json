@@ -2919,24 +2919,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fvvdh\\.nuget\\packages\\": {}
+    "C:\\Users\\ruslan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.NET Learn\\Practic\\CrudOrders\\CrudOrders.csproj",
+      "projectUniqueName": "C:\\Users\\ruslan\\Documents\\ASP.NET Core\\LearnASP.NETCore\\Learn-ASP.NET-core\\CrudOrders\\CrudOrders.csproj",
       "projectName": "CrudOrders",
-      "projectPath": "D:\\.NET Learn\\Practic\\CrudOrders\\CrudOrders.csproj",
-      "packagesPath": "C:\\Users\\fvvdh\\.nuget\\packages\\",
-      "outputPath": "D:\\.NET Learn\\Practic\\CrudOrders\\obj\\",
+      "projectPath": "C:\\Users\\ruslan\\Documents\\ASP.NET Core\\LearnASP.NETCore\\Learn-ASP.NET-core\\CrudOrders\\CrudOrders.csproj",
+      "packagesPath": "C:\\Users\\ruslan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ruslan\\Documents\\ASP.NET Core\\LearnASP.NETCore\\Learn-ASP.NET-core\\CrudOrders\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fvvdh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ruslan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3005,7 +3008,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.309/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

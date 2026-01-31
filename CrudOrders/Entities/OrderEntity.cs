@@ -3,9 +3,10 @@ namespace CrudOrders.Entities
     public class OrderEntity
     {
         public Guid Id { get; set; }
+        public string ReferenceId { get; set; } = Guid.NewGuid().ToString();
         public string Name { get; set; } = string.Empty;
         public int Amount { get; set; } = 1;
-        public OrderType orderType { get; set; }
+        public OrderCatagoty OrderCatagory { get; set; }
         public OrderStatus orderStatus { get; set; } = OrderStatus.Created;
 
     }
@@ -20,10 +21,13 @@ namespace CrudOrders.Entities
         Cancelled = 5
     }
 
-    public enum OrderType
+    public enum OrderCatagoty
     {
-        techno, 
-        eat,
+        Food = 0, 
+        Beverages = 1,
+        Household = 2,
+        Electronics = 3,
+        Clothing = 4
     }
 
 
@@ -37,7 +41,7 @@ namespace CrudOrders.Entities
             {
                 { OrderStatus.Created,  new[]{ OrderStatus.Paid, OrderStatus.Cancelled}},
                 { OrderStatus.Paid,  new[]{ OrderStatus.InProgress, OrderStatus.Cancelled}},
-                { OrderStatus.InProgress,  new[]{ OrderStatus.Shipped}},
+                { OrderStatus.InProgress,  new[]{ OrderStatus.Shipped, OrderStatus.Cancelled}},
                 { OrderStatus.Shipped,  new[]{ OrderStatus.Delivered}},
                 { OrderStatus.Delivered,  Array.Empty<OrderStatus>()},
                 { OrderStatus.Cancelled,  Array.Empty<OrderStatus>()}
