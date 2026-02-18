@@ -3,10 +3,11 @@ using CrudOrders.Entities;
 
 namespace CrudOrders.Data
 {
-    public class OrderDbContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public OrderDbContext(DbContextOptions<OrderDbContext> options) : base(options){}
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
 
         public DbSet<OrderEntity> Orders => Set<OrderEntity>();
+        public DbSet<UserEntity> Users => Set<UserEntity>();
     }
 }

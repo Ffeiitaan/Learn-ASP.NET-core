@@ -242,3 +242,11 @@ C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudO
 C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\obj\Debug\net9.0\CrudOrders.pdb
 C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\obj\Debug\net9.0\CrudOrders.genruntimeconfig.cache
 C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\obj\Debug\net9.0\ref\CrudOrders.dll
+C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ruslan\Documents\ASP.NET Core\LearnASP.NETCore\Learn-ASP.NET-core\CrudOrders\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll

@@ -4,11 +4,14 @@ namespace CrudOrders.Entities
     {
         public Guid Id { get; set; }
         public string ReferenceId { get; set; } = Guid.NewGuid().ToString();
+
         public string Name { get; set; } = string.Empty;
         public int Amount { get; set; } = 1;
         public OrderCatagoty OrderCatagory { get; set; }
         public OrderStatus orderStatus { get; set; } = OrderStatus.Created;
 
+        public Guid UserId { get; set; }
+        public UserEntity User { get; set; } = null!;
     }
 
     public enum OrderStatus

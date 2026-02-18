@@ -8,15 +8,15 @@ namespace CrudOrders.Services
 {
     public class OrderService : IOrderService
     {
-        private readonly OrderDbContext _context;
+        private readonly AppDbContext _context;
 
-        public OrderService(OrderDbContext context)
+        public OrderService(AppDbContext context)
         {
             _context = context;
         }
 
         // Add
-        public async Task<OrderDto> AddOrder(AddOrderDto request)
+        public async Task<OrderDto> AddOrder(AddOrderDto request, Guid userId)
         {
             if(string.IsNullOrWhiteSpace(request.Name)) 
                 throw new ArgumentException(
@@ -33,10 +33,11 @@ namespace CrudOrders.Services
 
             var newOrder = new OrderEntity
             {
+                ReferenceId = Guid.NewGuid().ToString(),
                 Name = request.Name,
                 Amount = request.Amount,
                 OrderCatagory = request.OrderCatagoty,
-                ReferenceId = Guid.NewGuid().ToString()
+                UserId = userId 
             };
 
             _context.Orders.Add(newOrder);
@@ -141,7 +142,7 @@ namespace CrudOrders.Services
         }
 
         // Видалення
-        public async Task DeleteOrder(string referenceId)
+        public async Task DeleteOrder(string referenceId, Guid currentUserId, bool isAdmin)
         {
             var orderDelete = await _context.Orders
                 .FirstOrDefaultAsync(o => o.ReferenceId == referenceId);
@@ -151,8 +152,11 @@ namespace CrudOrders.Services
                 $"Order with ID '{referenceId}' not found"
             );
 
-            _context.Orders.Remove(orderDelete);
+            if(orderDelete.UserId != currentUserId && !isAdmin)
+                throw new UnauthorizedAccessException("Access denied");
 
+            _context.Orders.Remove(orderDelete);
+            
             await _context.SaveChangesAsync();
         }
     }

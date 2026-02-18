@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudOrders")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e8f9f004d04879ccea8a8a8644ae63c553d5fd0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccfd1e865ebbccaa3b81eec46a75aaecc4f23bf5")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudOrders")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudOrders")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

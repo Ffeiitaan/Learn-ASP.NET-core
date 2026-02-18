@@ -1,14 +1,14 @@
-using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
-using CrudOrders.Entities;
+using System.Security.Claims;
 using CrudOrders.Models;
 using CrudOrders.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CrudOrders.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class OrderController(IOrderService orderService) : ControllerBase
     {
 
@@ -19,7 +19,9 @@ namespace CrudOrders.Controllers
             if(!ModelState.IsValid)
                 return ValidationProblem(ModelState);
 
-            var addOrder = await orderService.AddOrder(request);
+            var userid = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            var addOrder = await orderService.AddOrder(request, userid);
             return Ok(addOrder);
         }
 
@@ -47,7 +49,6 @@ namespace CrudOrders.Controllers
         [HttpGet]
         public async Task<ActionResult<List<OrderDto>>> GetAll()
         {
-
             return await orderService.GetAllOrders();
         }
 
@@ -64,7 +65,10 @@ namespace CrudOrders.Controllers
         [HttpDelete("{referenceId}")]
         public async Task<ActionResult> Delete(string referenceId)
         {
-            await orderService.DeleteOrder(referenceId);
+            var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            var isAdmin = User.IsInRole("Admin");
+
+            await orderService.DeleteOrder(referenceId, userId, isAdmin);
             return NoContent();
         }
     }
